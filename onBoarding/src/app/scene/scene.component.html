@@ -30,69 +30,7 @@
       </div>
     </ng-container>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="container d-flex pt-5">
-
-    @for ( frase of frases; track frase.index) {
-
-      <div class="d-flex"
-        [class.firstCard]="frase.index === 0"
-        [class.secondCard]="frase.index === 1"
-        [class.thirdCard]="frase.index === 2"
-        >
-        
-        <div class="card w-75">
-          <div class="card-img d-flex justify-content-center">
-            <img [src] = "frase.img" alt="" class="card-img-top img-fluid" [style.background-color]="frase.bgcolor">
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">{{ frase.title }}</h3>
-            <br>
-            <p class="card-text">{{ frase.description }}</p>
-            <br><br>
-          </div>
-          <div class="card-navigation d-flex justify-content-between align-items-center mb-2">
-            <div class=" d-flex">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            @switch(frase.index) {
-              @case (0) {
-            <div class="button " >
-              <button class="btn" (click)="changeSlide()"><img src="assets/arrow-right.svg" class="img" alt=""></button>
-            </div>}
-            @case (1) {
-              <div class="button" >
-                <button class="btn" (click)="changeSlideBack()"><img src="assets/arrow-left.svg" class="img" alt=""></button>
-                <button class="btn " (click)="changeSlide()"><img src="assets/arrow-right.svg" class="img" alt=""></button>
-              </div>}
-            @case (2) {
-              <div class="button" >
-                <button class="btn " (click)="changeSlideBack()"><img src="assets/arrow-left.svg" class="img" alt=""></button>
-              </div>}
-            }
-          </div>
-        </div>
-    </div>
-  
-
-    }
-  
-</div>  -->
-      
+    
 
 </body>
 </html>

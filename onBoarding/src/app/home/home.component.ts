@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SceneComponent } from '../scene/scene.component';
 import { StepsService } from '../steps.service';
 import { IStep } from '../i-step';
@@ -13,10 +13,14 @@ import { IStep } from '../i-step';
  })
 export class HomeComponent implements OnInit{
   frases: IStep[] = []
-
-  constructor(private stepsService: StepsService) {} //injection of service StepsService
+  
+  private steps = inject(StepsService)
 
   ngOnInit(): void {
-    this.frases = this.stepsService.getSteps();
+    this.frases = this.steps.getSteps();
   }
-}
+  
+  }
+
+
+

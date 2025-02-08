@@ -1,6 +1,100 @@
-<!-- <h3>Dedicate many hours</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="d-flex justify-content-center pt-5">
+    <ng-container *ngFor = "let frase of frases; let i = index">
+      <div *ngIf = "i === currentStep" class="d-flex justify-content-center">
+        <div class="card w-25">
+          <img [src] = "frase.img" alt="" class="card-img-top h-50 w-100" [style.background-color]="frase.bgcolor">
+          <h3 class="card-title ms-2 me-2">{{ frase.title }}</h3>
+          <br>
+          <p class="card-text ms-2 me-2 wrap">{{ frase.description }}</p>
+          <br><br>
+          <div class="card-navigation d-flex justify-content-between align-items-center mb-2">
+            <div class="d-flex ms-2">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="button">              
+              <button type="button" class="btn me-2" *ngIf="frase.index !== 0" (click)="previuosCard() ">&#8592;</button>
+              <button type="button" class="btn me-2" *ngIf="frase.index !== 2" (click)="nextCard()">&#8594;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 
-Minimum 30 hours per week. If it's not enough, you have to dedicate more hours. 
-Seems impossible at the beginning, but you will notice the improvment very soon. -->
 
-<div *ngfor="let frase of frases"><h3>{{frase.title }}</h3></div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container d-flex pt-5">
+
+    @for ( frase of frases; track frase.index) {
+
+      <div class="d-flex"
+        [class.firstCard]="frase.index === 0"
+        [class.secondCard]="frase.index === 1"
+        [class.thirdCard]="frase.index === 2"
+        >
+        
+        <div class="card w-75">
+          <div class="card-img d-flex justify-content-center">
+            <img [src] = "frase.img" alt="" class="card-img-top img-fluid" [style.background-color]="frase.bgcolor">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">{{ frase.title }}</h3>
+            <br>
+            <p class="card-text">{{ frase.description }}</p>
+            <br><br>
+          </div>
+          <div class="card-navigation d-flex justify-content-between align-items-center mb-2">
+            <div class=" d-flex">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            @switch(frase.index) {
+              @case (0) {
+            <div class="button " >
+              <button class="btn" (click)="changeSlide()"><img src="assets/arrow-right.svg" class="img" alt=""></button>
+            </div>}
+            @case (1) {
+              <div class="button" >
+                <button class="btn" (click)="changeSlideBack()"><img src="assets/arrow-left.svg" class="img" alt=""></button>
+                <button class="btn " (click)="changeSlide()"><img src="assets/arrow-right.svg" class="img" alt=""></button>
+              </div>}
+            @case (2) {
+              <div class="button" >
+                <button class="btn " (click)="changeSlideBack()"><img src="assets/arrow-left.svg" class="img" alt=""></button>
+              </div>}
+            }
+          </div>
+        </div>
+    </div>
+  
+
+    }
+  
+</div>  -->
+      
+
+</body>
+</html>
+
+

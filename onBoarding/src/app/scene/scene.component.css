@@ -61,25 +61,8 @@
     margin-left: 5px;
   }
 }
-/* @keyframes notActiveDot {
-  from{
-    width: 25px;
-    background-color: rgb(27, 26, 26);
-    border-radius: 25%;
-    opacity: 75%;
-  } 
-  to {
-    width: 10px;
-    background-color: rgba(206, 204, 204, 0.967);
-    border-radius: 50%;
-    opacity: 0%;
-  }
-} */
+
 .active-dot{
   animation-name: activeDot;
   animation-fill-mode: forwards;
 }
-/* .not-active-dot{
-  animation-name: notActiveDot;
-  animation-fill-mode: forwards;
-} */

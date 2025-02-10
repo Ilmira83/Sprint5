@@ -13,18 +13,22 @@ import { CommonModule } from '@angular/common';
 export class SceneComponent {
   @Input() frases: IStep[] = [];
   currentStep: number = 0;
-  isVisible: boolean = false;
+  dots = document.querySelectorAll('.dot')
 
   nextCard() {
-   if(this.currentStep < this.frases.length-1) {
+   if(this.currentStep <= this.frases.length-1) {
      this.currentStep++
     }
   }
+
   previuosCard() {
     if(this.currentStep >= 1) {
       this.currentStep--
     } 
   }
+
+
+
   
 
 

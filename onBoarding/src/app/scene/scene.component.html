@@ -9,21 +9,24 @@
   <div class="d-flex justify-content-center pt-5">
     <ng-container *ngFor = "let frase of frases; let i = index">
       <div *ngIf = "i === currentStep" class="d-flex justify-content-center">
-        <div class="card w-25">
-          <img [src] = "frase.img" alt="" class="card-img-top h-50 w-100" [style.background-color]="frase.bgcolor">
-          <h3 class="card-title ms-2 me-2">{{ frase.title }}</h3>
-          <br>
-          <p class="card-text ms-2 me-2 wrap">{{ frase.description }}</p>
-          <br><br>
-          <div class="card-navigation d-flex justify-content-between align-items-center mb-2">
-            <div class="d-flex ms-2">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+        <div class="card d-flex">
+          <div class="card-img" [style.background-color]="frase.bgcolor">
+            <img [src] = "frase.img" alt="" class="card-img-top" [style.background-color]="frase.bgcolor">
+          </div>
+          <div class="card-content d-grid p-3">
+            <h3 class="card-title fs-5">{{ frase.title }}</h3>
+            <br>
+            <p class="card-text text-wrap fs-6">{{ frase.description }}</p>
+            <br><br> 
+          </div>
+          <div class="card-navigation">
+            <div class="d-flex">
+              <span id="0" class="dot" *ngFor="let frase of frases; let i = index" 
+              class="dot" [ngClass] = "{ 'active-dot': currentStep === i, 'dot': currentStep !== i }" ></span>
             </div>
             <div class="button">              
-              <button type="button" class="btn me-2" *ngIf="frase.index !== 0" (click)="previuosCard() ">&#8592;</button>
-              <button type="button" class="btn me-2" *ngIf="frase.index !== 2" (click)="nextCard()">&#8594;</button>
+              <button type="button" class="btn" *ngIf="frase.index !== 0" (click)="previuosCard()">&#8592;</button>
+              <button type="button" class="btn" *ngIf="frase.index !== 2" (click)="nextCard()">&#8594;</button>
             </div>
           </div>
         </div>

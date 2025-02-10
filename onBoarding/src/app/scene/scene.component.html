@@ -20,9 +20,10 @@
             <br><br> 
           </div>
           <div class="card-navigation">
-            <div class="d-flex">
-              <span id="0" class="dot" *ngFor="let frase of frases; let i = index" 
-              class="dot" [ngClass] = "{ 'active-dot': currentStep === i, 'dot': currentStep !== i }" ></span>
+            <div class="d-flex" >
+              <span *ngFor = "let frase of frases; let i = index" (click)="changeCard(i)"
+                class="dot" [ngClass] = "{ 'active-dot': currentStep === i, 'dot': currentStep !== i }">
+              </span>
             </div>
             <div class="button">              
               <button type="button" class="btn" *ngIf="frase.index !== 0" (click)="previuosCard()">&#8592;</button>

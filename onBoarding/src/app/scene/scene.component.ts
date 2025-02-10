@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class SceneComponent {
   @Input() frases: IStep[] = [];
   currentStep: number = 0;
-  dots = document.querySelectorAll('.dot')
+  
 
   nextCard() {
    if(this.currentStep <= this.frases.length-1) {
@@ -25,6 +25,9 @@ export class SceneComponent {
     if(this.currentStep >= 1) {
       this.currentStep--
     } 
+  }
+  changeCard(index: number) {
+    this.currentStep = index
   }
 
 
